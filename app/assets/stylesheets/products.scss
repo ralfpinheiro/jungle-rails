@@ -39,6 +39,11 @@ main section.categories-show {
         transition: all 0.3s;
       }
 
+      .logged-user {
+        padding-top: 15px;
+        color: grey;
+      }
+
       aside.sold-out {
         position: absolute;
         top: 0;
