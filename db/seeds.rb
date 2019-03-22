@@ -29,10 +29,6 @@ cat1 = Category.find_or_create_by! name: 'Apparel'
 cat2 = Category.find_or_create_by! name: 'Electronics'
 cat3 = Category.find_or_create_by! name: 'Furniture'
 
-## REVIEWS
-
-
-
 ## PRODUCTS
 
 puts "Re-creating Products ..."
@@ -112,7 +108,7 @@ cat2.products.create!({
   price: 2_026.29
 })
 
-cat3.products.create!({
+prod1 = cat3.products.create!({
   name:  'Optimal Sleeping Bed',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('furniture1.jpg'),
@@ -120,7 +116,7 @@ cat3.products.create!({
   price: 3_052.00
 })
 
-cat3.products.create!({
+prod2 = cat3.products.create!({
   name:  'Electric Chair',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('furniture2.jpg'),
@@ -128,7 +124,7 @@ cat3.products.create!({
   price: 987.65
 })
 
-cat3.products.create!({
+prod3 = cat3.products.create!({
   name:  'Red Bookshelf',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('furniture3.jpg'),
@@ -138,25 +134,24 @@ cat3.products.create!({
 
 Review.destroy_all
 
-prod1 = Product.find_or_create_by! id: 1
-prod2 = Product.find_or_create_by! id: 2
-prod3 = Product.find_or_create_by! id: 3
-
+#prod1 = Product.find_or_create_by! id: 1
+#prod2 = Product.find_or_create_by! id: 2
+#prod3 = Product.find_or_create_by! id: 3
 
 prod1.reviews.create!({
-  user_id: 100,
+  user_id: 1,
   description: 'I dont like this',
   rating: 1
 })
 
 prod2.reviews.create!({
-  user_id: 200,
+  user_id: 1,
   description: 'Not too bad!',
   rating: 3
 })
 
 prod3.reviews.create!({
-  user_id: 300,
+  user_id: 1,
   description: 'Awesomeeeeee',
   rating: 5
 })

@@ -28,10 +28,15 @@
 
   </article>
 <h4>Product Reviews</h4>
-  <article>
-   <% @product.reviews.each do |review| %>
-  <%= render 'review', user: review[:user_id], description: review[:description], rating: review[:rating] %>
+ <article>
+   <% @reviews.each do |review| %>
+    <% user = User.find_by(id: review.user_id)%>
+      <strong><%= user.first_name %> <%= user.last_name %></strong> 
+      <br>
+      <p>Product Rating</p>
+      <p><%= review.rating %>/5</p>
+      <p>Comment</p>
+      <p><%= review.description %></p>
   <% end %>
   </article>
-
 </section>
