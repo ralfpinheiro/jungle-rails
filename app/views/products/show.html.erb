@@ -27,5 +27,11 @@
     </div>
 
   </article>
+<h4>Product Reviews</h4>
+  <article>
+   <% @product.reviews.each do |review| %>
+  <%= render 'review', user: review[:user_id], description: review[:description], rating: review[:rating] %>
+  <% end %>
+  </article>
 
 </section>
