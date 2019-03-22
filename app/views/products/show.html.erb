@@ -27,6 +27,14 @@
     </div>
 
   </article>
+<h4>Reviews this product</h4>
+  <%= form_for :review do |r| %>
+  <label>Description</label>
+  <%= r.text_area :description %>
+  <label>Rate</label>
+  <%= r.select :rating, [['1'], ['2'], ['3'], ['4'], ['5']]%>
+  <%= r.submit %>
+<% end %>
 <h4>Product Reviews</h4>
  <article>
    <% @reviews.each do |review| %>
@@ -39,10 +47,5 @@
       <p><%= review.description %></p>
   <% end %>
   </article>
-
-<%= form_for :reviews do |f| %>
-  
-  <%= f.submit %>
-<% end %>
 
 </section>
