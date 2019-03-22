@@ -28,7 +28,8 @@
 
   </article>
 <h4>Reviews this product</h4>
-  <%= form_for :review do |r| %>
+  <%= form_for :review, url: product_reviews_path(@product), method: 'post' do |r| %>
+  <%= r.hidden_field :user_id, value: session[:user_id] %>
   <label>Description</label>
   <%= r.text_area :description %>
   <label>Rate</label>
