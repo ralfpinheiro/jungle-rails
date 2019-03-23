@@ -27,25 +27,25 @@
     </div>
 
   </article>
-<h4>Reviews this product</h4>
+<br/>
+<h4>Review this product</h4>
   <%= form_for :review, url: product_reviews_path(@product), method: 'post' do |r| %>
-  <%= r.hidden_field :user_id, value: session[:user_id] %>
   <label>Description</label>
   <%= r.text_area :description %>
   <label>Rate</label>
-  <%= r.select :rating, [['1'], ['2'], ['3'], ['4'], ['5']]%>
+  <%= r.select :rating, [['1 Star'], ['2 Stars'], ['3 Stars'], ['4 Stars'], ['5 Stars']]%>
   <%= r.submit %>
-<% end %>
+  <% end %>
+<br/>
 <h4>Product Reviews</h4>
+<br/>
  <article>
    <% @reviews.each do |review| %>
-    <% user = User.find_by(id: review.user_id)%>
-      <strong><%= user.first_name %> <%= user.last_name %></strong> 
-      <br>
-      <p>Product Rating</p>
-      <p><%= review.rating %>/5</p>
-      <p>Comment</p>
-      <p><%= review.description %></p>
+       <% user = User.find_by(id: review.user_id)%>
+      <h4><strong><%= user.first_name %> <%= user.last_name %></strong></h4>
+      
+      <p><b>Product Rating:</b> <%= review.rating %>/5</p>
+      <p><b>Comment:</b> <%= review.description %></p>
   <% end %>
   </article>
 
