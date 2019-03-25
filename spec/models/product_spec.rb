@@ -15,7 +15,7 @@ RSpec.describe ProductSpec, type: :model do
     end
 
 
-    it "it has a valid name" do
+    it 'it has a valid name' do
       @product.name = nil
       
       expect(@product).not_to be_valid
