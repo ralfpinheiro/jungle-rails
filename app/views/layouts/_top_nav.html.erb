@@ -44,12 +44,11 @@
             <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
           <% end %>
         </li>
-        <li>
+        <li class="user-logged-name">
         <% if current_user %>
           <p class="logged-user">Signed in as <%= current_user.first_name %></p>
           </li>
-          <li>
-           | <%= link_to "Logout", [:logout] %>
+          <li class="user-logged-btn"> | <%= link_to "Logout", [:logout] %>
           </li>
         <% else %>
         <%= link_to 'Login', [:login] %>

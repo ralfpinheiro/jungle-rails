@@ -39,6 +39,11 @@ main section.categories-show {
         transition: all 0.3s;
       }
 
+      .user-logged-name {
+        height: 100%;
+        background-color: red;
+      }
+
       .logged-user {
         padding-top: 15px;
         color: grey;
